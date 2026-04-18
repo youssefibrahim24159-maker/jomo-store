@@ -1171,3 +1171,11 @@ function addToInvoiceFromBarcode(p) {
     saveAll();
     renderInvoice();
 }
+function loadTypes(){
+    let select = document.getElementById("type");
+    if(!select) return;
+    // إضافة سطر لمسح القائمة القديمة
+    select.innerHTML = ""; 
+    select.innerHTML = types.map(t => `<option>${t}</option>`).join("");
+    if(document.getElementById("typesList")) renderTypesList();
+}

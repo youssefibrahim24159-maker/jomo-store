@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المصروفات</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+<div class="card">
+
+    <h2>🧾 المصروفات</h2>
+
+    <!-- 📅 البحث بالتاريخ -->
+    <input type="date" id="searchExpDate" onchange="filterExpensesByDate()">
+
+    <!-- 🔍 البحث في النوع -->
+    <input id="searchExp" placeholder="🔍 ابحث عن نوع المصروف..." onkeyup="searchExpenseType()">
+
+    <!-- 📋 نوع المصروف -->
+    <select id="expType"></select>
+
+    <!-- ➕ إضافة نوع -->
+    <button onclick="addNewExpenseType()">➕ إضافة نوع جديد</button>
+
+    <!-- 💰 المبلغ -->
+    <input id="expAmount" type="number" placeholder="المبلغ">
+
+    <!-- 🔘 الأزرار -->
+    <button onclick="addExpense()">➕ إضافة مصروف</button>
+    <button onclick="saveExpenses()">💾 حفظ</button>
+    <button onclick="go('index.html')" class="secondary-btn">⬅️ رجوع</button>
+
+    <!-- 🔥 أنواع المصروفات -->
+    <div id="expenseTypesList"></div>
+
+    <!-- 💰 الإجمالي -->
+    <h3 id="totalExpenses"></h3>
+
+    <!-- 🔥 المصروفات (لازم تبقى تحت خالص) -->
+    <div id="expensesList"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الفواتير</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+<h2>JOMO</h2>
+<button onclick="go('index.html')">رجوع</button>
+</div>
+<div style="text-align:center; margin:20px;">
+    <h3 style="color:white;">📅 اختر يوم لعرض الفواتير</h3>
+
+    <input type="date" id="searchDate"
+        onchange="filterInvoicesByDate()"
+        style="padding:10px;border-radius:10px;border:1px solid #333;background:#111;color:white;">
+</div>
+
+<h3 id="dailyTotal" style="text-align:center;color:red;"></h3>
+
+<div id="invoice"></div>
+<div class="card">
+
+<button onclick="loadAllInvoices()">📄 عرض الفواتير</button>
+
+<div id="invoice"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

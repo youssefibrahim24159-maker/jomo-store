@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>البروفايل</title>
+<link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="profile-card">
+
+        <h2>👤 الصفحة الشخصية</h2>
+
+        <div class="img-box">
+            <img id="userImage" src="https://via.placeholder.com/120">
+        </div>
+
+        <input type="file" onchange="changeImage(event)">
+
+        <div class="info">
+            <input id="newUsername" placeholder="اسم المستخدم">
+            <input id="newPassword" placeholder="كلمة المرور الجديدة">
+        </div>
+
+        <button onclick="saveProfile()">💾 حفظ التعديلات</button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

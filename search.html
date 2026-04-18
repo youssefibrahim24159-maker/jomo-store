@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المخزن</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+<h2>📦 المخزن</h2>
+<button onclick="go('index.html')">رجوع</button>
+</div>
+
+<div class="card">
+
+<input onkeyup="renderProducts(this.value)" placeholder="🔍 ابحث عن منتج">
+
+<div id="productsList"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

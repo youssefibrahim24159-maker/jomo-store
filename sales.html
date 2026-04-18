@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بيع</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+<h2>JOMO</h2>
+<button onclick="go('index.html')">رجوع</button>
+</div>
+<div class="card">
+    <input id="barcodeInput" 
+           placeholder="🔍 ابحث أو امسح الباركود هنا..." 
+           style="width: 100%; padding: 15px; margin-bottom: 5px; border: 2px solid red; background: #000; color: #fff; border-radius: 10px; font-size: 16px;"
+           oninput="checkBarcode(this.value)"
+           autofocus>
+    
+    <p id="barcodeStatus" style="color: yellow; font-size: 14px; margin-bottom: 15px; height: 20px;"></p>
+
+    <hr>
+    
+    <select id="saleType" onchange="loadProductsByType()"></select>
+    <select id="productList" onchange="showPrice()"></select>
+    <input id="salePrice" placeholder="💵 السعر">
+    <button onclick="addToInvoice()">➕ إضافة</button>
+
+    <hr>
+    <div id="invoiceList"></div>
+    <h3 id="totalText"></h3>
+    <button onclick="confirmSale()">✅ تأكيد البيع</button>
+    <button onclick="openPrintPage()">🧾 طباعة</button>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

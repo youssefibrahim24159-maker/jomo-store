@@ -1,0 +1,223 @@
+:root {
+    --primary: #ff0000;
+    --bg-dark: #0a0a0a;
+    --card-bg: #161616;
+    --text: #ffffff;
+    --accent: #2ecc71;
+    --border: #333;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text);
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    margin: 0;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 2px solid var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 25px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.stat-card {
+    background: #111;
+    padding: 15px;
+    border-radius: 12px;
+    border-bottom: 3px solid var(--primary);
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: #0d0d0d;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+button {
+    background: var(--primary);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background: #333;
+}
+
+.type-item {
+    display: flex;
+    justify-content: space-between;
+    background: #222;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+.box{
+    width:350px;
+    margin:50px auto;
+    background:#111;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(255,0,0,0.3);
+}
+
+input{
+    width:90%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:10px;
+    border:1px solid #333;
+    background:#000;
+    color:white;
+}
+
+button {
+    background: var(--primary);
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%; /* 🔥 ده اللي يخليهم تحت بعض */
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+/* زرار رجوع */
+.secondary-btn {
+    background: #333;
+}
+.main-btn{
+    padding:12px 20px;
+    margin:10px;
+    background:red;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+.main-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px red;
+}
+.actions{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.main-btn{
+    padding:14px 22px;
+    background:linear-gradient(45deg, red, #ff3c3c);
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    min-width:140px;
+}
+
+.main-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px red;
+}
+/* 📱 موبايل */
+@media (max-width: 600px) {
+
+    .card {
+        width: 95% !important;
+        padding: 15px;
+    }
+
+    input, select, button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .main-btn {
+        width: 100%;
+    }
+}
+
+/* 📱 تابلت */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .card {
+        width: 80%;
+    }
+
+    .main-btn {
+        min-width: 120px;
+    }
+}
+
+/* 💻 كمبيوتر */
+@media (min-width: 1025px) {
+
+    .card {
+        width: 450px;
+    }
+}

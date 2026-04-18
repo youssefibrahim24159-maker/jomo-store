@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(-45deg, #000, #111, #000, #111);
+    background-size: 400% 400%;
+    animation: bgMove 10s infinite alternate;
+}
+
+/* حركة الخلفية */
+@keyframes bgMove {
+    0% { background-position: left; }
+    100% { background-position: right; }
+}
+
+/* الكونتينر */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* الكارت */
+.profile-card {
+    background: rgba(17,17,17,0.9);
+    padding: 30px;
+    border-radius: 20px;
+    width: 320px;
+    text-align: center;
+    border: 1px solid #222;
+    box-shadow: 0 0 30px rgba(255,0,0,0.2);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.profile-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 50px rgba(255,0,0,0.4);
+}
+
+/* الصورة */
+.img-box {
+    margin: 15px 0;
+}
+
+.img-box img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid red;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.img-box img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px red;
+}
+
+/* الانبوت */
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: none;
+    background: #000;
+    color: white;
+    outline: none;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: red;
+    box-shadow: 0 0 10px red;
+}
+
+/* زرار */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(45deg, red, #ff3c3c);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px red;
+}
+h2{
+    color: #ff3c3c;
+}

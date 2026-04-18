@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>JOMO STORE - Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #000; color: white; margin: 0; padding: 0; }
+        .navbar { background-color: #111; padding: 20px; text-align: center; border-bottom: 2px solid red; }
+        .dashboard { display: flex; justify-content: space-around; padding: 20px; gap: 10px; flex-wrap: wrap; }
+        .stat-card { background: #111; padding: 20px; border-radius: 10px; border-bottom: 4px solid red; min-width: 150px; text-align: center; flex: 1; }
+        .stat-card h4 { margin: 0 0 10px 0; font-size: 16px; color: #ccc; }
+        .stat-card p { margin: 0; font-size: 22px; font-weight: bold; color: white; }
+        .main-buttons { display: flex; flex-direction: column; align-items: center; gap: 15px; padding: 20px; }
+        .btn { width: 90%; max-width: 400px; padding: 15px; border-radius: 10px; border: none; font-size: 18px; font-weight: bold; cursor: pointer; color: white; background-color: red; transition: 0.3s; }
+        .btn:hover { background-color: darkred; }
+        #loginBox { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+        input { padding: 10px; margin: 10px; width: 250px; border-radius: 5px; border: 1px solid red; background: #222; color: white; }
+    </style>
+</head>
+<body>
+
+    <div id="loginBox">
+        <h2>تسجيل الدخول - JOMO STORE</h2>
+        <input type="text" id="username" placeholder="اسم المستخدم">
+        <input type="password" id="password" placeholder="كلمة السر">
+        <button class="btn" onclick="login()">دخول</button>
+    </div>
+
+    <div id="home" style="display:none;">
+        <div style="position:relative; display:inline-block;">
+    <img id="profileImg" src="https://via.placeholder.com/40"
+        onclick="toggleProfileMenu()"
+        style="width:40px;height:40px;border-radius:50%;cursor:pointer;border:2px solid red;">
+
+    <div id="profileMenu" style="
+        display:none;
+        position:absolute;
+        right:0;
+        background:#111;
+        border:1px solid red;
+        border-radius:10px;
+        padding:10px;
+        width:180px;
+        z-index:1000;
+    ">
+        <p onclick="openProfile()" style="cursor:pointer;color:white;">👤 البروفايل</p>
+        <p onclick="logout()" style="cursor:pointer;color:red;">🚪 تسجيل خروج</p>
+    </div>
+</div>
+        <div class="navbar">
+            <h2>JOMO STORE</h2>
+        </div>
+
+        <div class="dashboard">
+            <div class="stat-card">
+                <h4>إجمالي البيع</h4>
+                <p id="totalSalesToday">0 ج</p>
+            </div>
+            <div class="stat-card">
+                <h4>صافي الربح</h4>
+                <p id="totalProfitToday">0 ج</p>
+            </div>
+            <div class="stat-card">
+                <h4>نواقص</h4>
+                <p id="outOfStockCount">0</p>
+            </div>
+        </div>
+
+        <div class="main-buttons">
+            <button class="btn" onclick="go('add.html')">➕ إضافة منتج جديد</button>
+            <button class="btn" onclick="go('sales.html')">💰 عملية بيع جديدة</button>
+            <button class="btn" onclick="go('invoice.html')">🧾 سجل الفواتير</button>
+            <button class="btn" onclick="go('search.html')">📦 جرد المخزن</button>
+
+            <button class="btn" onclick="go('reports.html')">💰 الأرباح</button>
+            <button class="btn" onclick="go('expenses.html')">🧾 المصروفات</button>
+
+            <button class="btn" onclick="logout()" style="background-color: #444;">🚪 خروج</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

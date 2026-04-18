@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فاتورة JOMO STORE</title>
+<style>
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; direction: rtl; text-align: center; color: #333; }
+    .ticket { width: 80mm; margin: auto; padding: 10px; border: 1px dashed #ccc; }
+    .header h1 { color: red; margin: 0; font-size: 24px; }
+    .header p { margin: 5px 0; font-size: 12px; }
+    .items { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    .items th, .items td { text-align: right; padding: 8px; font-size: 14px; border-bottom: 1px solid #eee; }
+    .total { font-size: 18px; font-weight: bold; margin-top: 20px; border-top: 2px solid #000; padding-top: 10px; }
+    .footer { margin-top: 20px; font-size: 11px; font-style: italic; }
+    @media print { .no-print { display: none; } }
+</style>
+</head>
+<body onload="window.print()">
+
+<div class="ticket">
+    <div class="header">
+        <h1>JOMO STORE 👑</h1>
+        <p>موبايلات - إكسسوارات - خدمات كاش</p>
+        <p id="date"></p>
+    </div>
+    <hr>
+    <table class="items">
+        <thead>
+            <tr>
+                <th>الصنف</th>
+                <th>السعر</th>
+            </tr>
+        </thead>
+        <tbody id="data"></tbody>
+    </table>
+
+    <div class="total" id="totalPrice"></div>
+
+    <div class="footer">
+        <p>شكراً لثقتكم في JOMO ❤️</p>
+        <p>برجاء الحفاظ على الفاتورة للاستبدال</p>
+    </div>
+</div>
+
+<script>
+    let inv = JSON.parse(localStorage.getItem("lastInvoice")) || [];
+    let html = "", total = 0;
+    inv.forEach(i => {
+        total += i.price;
+        html += `<tr><td>${i.name}</td><td>${i.price} ج</td></tr>`;
+    });
+    document.getElementById("data").innerHTML = html;
+    document.getElementById("totalPrice").innerText = "الإجمالي: " + total + " ج";
+    document.getElementById("date").innerText = new Date().toLocaleString();
+</script>
+</body>
+</html>

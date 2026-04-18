@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إضافة منتج</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+<h2>JOMO</h2>
+<button onclick="go('index.html')">رجوع</button>
+</div>
+
+<div class="card">
+
+<input id="name" placeholder="📱 اسم المنتج">
+<input id="costPrice" type="number" placeholder="💰 سعر الجملة">
+<input id="sellPrice" type="number" placeholder="💵 سعر البيع">
+<input id="quantity" type="number" placeholder="📦 الكمية">
+<input id="barcode" placeholder="🔍 باركود (اختياري)">
+
+<select id="type"></select>
+
+<button onclick="addNewType()">➕ إضافة نوع</button>
+
+<div id="typesList"></div>
+
+<button onclick="addProduct()">💾 حفظ المنتج</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
